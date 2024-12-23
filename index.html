@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas técnicas (8 horas) - Mario Elguera</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background 0.5s ease-in-out;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: color 0.3s;
+            color: white;
+            padding: 50px;
+            font-family: cursive;
+        }
+
+        h1:hover {
+            color: white;
+            opacity: 1;
+        }
+
+        h1:not(:hover) {
+            opacity: 0.2;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 data-bg="./imagenes/metallica.png">Metallica</h1>
+        <h1 data-bg="./imagenes/greenDay.jpg">Green Day</h1>
+        <h1 data-bg="./imagenes/myChemicalRomance.jpg">My Chemical Romance</h1>
+        <h1 data-bg="./imagenes/megadeth.jpg">Megadeth</h1>
+        <h1 data-bg="./imagenes/michaelJackson.jpg">Michael Jackson</h1>
+        <h1 data-bg="./imagenes/slipknot.jpg">Slipknot</h1>
+        <h1 data-bg="./imagenes/vanHalen.jpg">Van Halen</h1>
+        <h1 data-bg="./imagenes/nirvana.jpg">Nirvana</h1>
+        <h1 data-bg="./imagenes/systemOfADown.jpg">System of a Down</h1>
+        <h1 data-bg="./imagenes/theStrokes.jpg">The Strokes</h1>
+    </div>
+
+    <script>
+        document.querySelectorAll('h1').forEach(title => {
+            title.addEventListener('mouseover', () => {
+                const bgImage = title.getAttribute('data-bg');
+                document.body.style.backgroundImage = `url('${bgImage}')`;
+            });
+
+            title.addEventListener('mouseout', () => {
+                document.body.style.backgroundImage = '';
+                document.body.style.backgroundColor = 'black';
+            });
+        });
+    </script>
+</body>
+
+</html>
